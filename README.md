@@ -1,6 +1,19 @@
-# Exo5
+# MyUser
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+You can create, update and delete user.
+Url : `http://localhost:4200/users`
+Get all users on your database.
+Url : `http://localhost:4200/users/{id}`
+Get user by id. You can update you user.
+Url : `http://localhost:4200/form`
+Create new user
+
+I use `https://randomuser.me/api/portraits/` for all photos.
+
+## Database server
+
+Run `npm run api` for database server. We use json-server on port `http://localhost:3000`.
 
 ## Development server
 

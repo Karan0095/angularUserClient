@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "lastName": "Karan Father",
+      "firstName": "Karan",
+      "age": 20,
+      "gender": "men",
+      "id": 1
+    }
+  ]
+}

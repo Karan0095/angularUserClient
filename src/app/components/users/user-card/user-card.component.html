@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <img class="card-img-top" src="https://randomuser.me/api/portraits/{{user.gender}}/{{user.id}}.jpg">
+        <h5 class="card-title">{{user.lastName | uppercase}}</h5>
+        <h5 class="card-title">{{user.firstName | titlecase}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Age: {{user.age}} ans</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Gender: {{user.gender==="men"?"Men ♂":"Women ♀"}}</h6>
+        <a routerLink="{{user.id}}" class="btn btn-primary">more information</a>
+        <a routerLink="/users" class="btn btn-danger" (click)="deleteEvent()">Delete</a>
+    </div>
+</div>

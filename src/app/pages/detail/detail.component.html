@@ -1,0 +1,46 @@
+<ng-container *ngIf="!user">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading ... </span>
+    </div>
+</ng-container>
+<ng-container *ngIf="user">
+    <p>About user :</p>
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <img src="https://randomuser.me/api/portraits/{{user.gender}}/{{user.id}}.jpg" alt="profile image">
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h4 class="card-title">{{user.lastName | uppercase}} {{user.lastName | uppercase}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Genre: {{user.gender==="men"?"Men ♂":"Women ♀"}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Age: {{user.age}} ans</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Id: {{user.id}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Update user : </p>
+    <form [formGroup]="userUpdateForm" (ngSubmit)="updateUser()">
+        <div class="form-group">
+            <label>Last name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+        </div>
+        <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" class="form-control" formControlName="age">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select class="form-select" formControlName="gender">
+                <option *ngFor="let gender of genders" [ngValue]="gender">{{gender==="men"?"Men ♂":"Women ♀"}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <button type="button" class="btn btn-warning" routerLink="/users">return >></button>
+</ng-container>
